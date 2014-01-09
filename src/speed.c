@@ -60,11 +60,6 @@ static void handle_bluetooth(bool connected) {
  }
 
 static GPath *s_my_path_ptr = NULL;
-static const GPathInfo BOLT_PATH_INFO = {
-  .num_points = 6,
-  .points = (GPoint []) {{21, 0}, {14, 26}, {28, 26}, {7, 60}, {14, 34}, {0, 34}}
-};
-
 static GPathInfo pi;
 
 uint8_t getY(uint8_t speed) {
