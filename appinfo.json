@@ -1,0 +1,31 @@
+{
+  "uuid": "31e04a42-ff81-4daa-bbdc-11746c338b0c",
+  "shortName": "speed",
+  "longName": "speed",
+  "companyName": "resmx.com",
+  "versionCode": 1,
+  "versionLabel": "1.0.0",
+  "capabilities": [ "location" ],
+  "watchapp": {
+    "watchface": true
+  },
+  "appKeys": {
+    "dummy": 0
+  },
+  "resources": {
+    "media": [
+      {
+        "characterRegex": "[\\-:0-9]",
+        "type": "font",
+        "name": "FONT_SYNCOPATE_BOLD_50",
+        "file": "fonts/Syncopate-Bold.ttf"
+      },
+      {
+        "characterRegex": "[:0-9]",
+        "type": "font",
+        "name": "FONT_OPENSANS_CONDBOLD_64",
+        "file": "fonts/OpenSans-CondBold.ttf"
+      }      
+    ]
+  }
+}
