@@ -1,8 +1,6 @@
 Pebble.addEventListener("ready",
     function(e) {
-        console.log("Hello world! - Sent from your javascript application.");
-        timer = setInterval(x, 500);
-        //weblog('start');
+        console.log("ready");
     }
 );
 
@@ -59,7 +57,6 @@ function getSpeedByP1P2() {
 
 function locationChanged(position) {
       // Scrolls the map so that it is centered at (position.coords.latitude, position.coords.longitude).
-      
 
       var speed = 255;
       if (position.coords.speed) {
@@ -76,7 +73,6 @@ function locationChanged(position) {
         }
       }
 
-      //var speed = Math.ceil(120 * Math.random());
       console.log('speed:' + position.coords.speed + '-' + speed);
         var transactionId = Pebble.sendAppMessage( { "0": speed},
           function(e) {
@@ -127,71 +123,7 @@ var options = {
     timeout: 5000 
 };
 
-//var watchId = navigator.geolocation.watchPosition(locationChanged, handleError, options);
-
-var timer = null;
-var y = 40; 
-
-var fake = ["59","58","60","59","57","57","59","60","62","62","62","60","62","63","63","63","63","63","62","62","60","62","55","61","59","60","59","60","56","57","57","55","56","58","58","59","61","61","62","63","60","59","64","56","62","60","60","60","59","57","56","53","49","47","46","49","51","40","41","40","39","45","45","28","27","27","25","22","12","11","18","18","16","12","0","10","12","23","27","29","32","37","43","45","41","41","46","47","50","50","50","52","53","52","52","53","54","53","55","55","52","41","28","3","7","7","7","0","9","9","9","9","4","4","9","12","24","19","15","10","11","0","3","5","5","5","5","4","0","5","5","5"];
-var idx = fake.length;
-function x()
-{
-    idx --;
-    idx = idx < 0 ? fake.length - 1 : idx; 
-
-  //console.log(y + ' -- ' + t + ' -- ' + s);
-  var transactionId = Pebble.sendAppMessage( { "0": parseInt(fake[idx])},
-          function(e) {
-            console.log("Successfully delivered message with transactionId="
-              + e.data.transactionId);
-          },
-          function(e) {
-            console.log("Unable to deliver message with transactionId="
-              + e.data.transactionId
-              + " Error is: " + e.error.message);
-            weblog(e.error.message);
-            //
-          }, 3000
-        );   
-
-    return;
-
-  var t = Math.round(Math.random() * 20);
-  if (t == 1) {
-    s = - 40;
-  } else if (t == 20) {
-    s = 40;
-  } else if (t <= 5) {
-    s = -5;
-  } else if (t >= 15) {
-    s = 5;
-  } else {
-    s = 0;
-  }
-
-  y += s;
-  y = y > 120 ? 120 : y;
-  y = y < 0 ? 0 : y;
-
- 
-}
-
-function weblog(msg) {
-  var response;
-  var req = new XMLHttpRequest();
-  req.open('GET', "http://resmx.com/temp.php?msg=" + msg, true);
-  req.onload = function(e) {
-    if (req.readyState == 4) {
-      if(req.status == 200) {
-        console.log(req.responseText);
-          } else {
-            console.log("Error");
-          }
-    }
-  }
-  req.send(null);
-}
-
+var watchId = navigator.geolocation.watchPosition(locationChanged, handleError, options);
 
 function buttonClickHandler() {
   // Cancel the updates when the user clicks a button.

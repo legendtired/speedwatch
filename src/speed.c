@@ -137,24 +137,9 @@ void my_layer_update_proc(Layer *my_layer, GContext* ctx) {
   free(ps);
 }
 
-
-
-void setup_my_path(void) {
-  //s_my_path_ptr = gpath_create(&BOLT_PATH_INFO);
-  // Rotate 15 degrees:
-  //gpath_rotate_to(s_my_path_ptr, TRIG_MAX_ANGLE / 360 * 15);
-  // Translate by (5, 5):
-  //gpath_move_to(s_my_path_ptr, GPoint(5, 5));
-}
-
-static void draw()
-{
-  //
-}
-
- void in_dropped_handler(AppMessageResult reason, void *context) {
+void in_dropped_handler(AppMessageResult reason, void *context) {
    // incoming message dropped
- }
+}
 
 static void app_message_init(void) {
   // Register message handlers
