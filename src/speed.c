@@ -151,7 +151,7 @@ static void window_load(Window *window) {
 
   GFont custom_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_SYNCOPATE_BOLD_50));
   text_layer = text_layer_create((GRect) { .origin = { 0, 16 }, .size = { bounds.size.w, 80 } });
-  text_layer_set_text(text_layer, "120");
+  text_layer_set_text(text_layer, "--");
   //text_layer_set_font(text_layer, fonts_get_system_font(FONT_KEY_BITHAM_42_BOLD));
   text_layer_set_font(text_layer, custom_font);
   text_layer_set_text_alignment(text_layer, GTextAlignmentCenter);
