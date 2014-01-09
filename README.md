@@ -1,4 +1,4 @@
-Based on PebbleSDK2.0 Beta4
+PebbleSDK2.0 Beta4 Based
 
 Speed view watch face
 
