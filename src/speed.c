@@ -73,6 +73,7 @@ uint8_t getY(uint8_t speed) {
 void info_layer_update_proc(Layer *my_layer, GContext* ctx) {
   //
 }
+
 // .update_proc of my_layer:
 void my_layer_update_proc(Layer *my_layer, GContext* ctx) {
 
@@ -129,7 +130,7 @@ void my_layer_update_proc(Layer *my_layer, GContext* ctx) {
     graphics_draw_line(ctx, GPoint(stack_length - 1,  y), GPoint(stack_length - 1,  getY(0))); 
   }
 
-  free(ps);
+  //free(ps);
 }
 
 void in_dropped_handler(AppMessageResult reason, void *context) {
@@ -167,8 +168,6 @@ static void window_load(Window *window) {
 
   layer_add_child(info_layer, text_layer_get_layer(label_layer));
   
-
-  setup_my_path();
   chart_layer = layer_create((GRect) { .origin = { 0, 108 }, .size = { bounds.size.w, 60 } });
   layer_set_update_proc(chart_layer, my_layer_update_proc);
   layer_add_child(window_layer, chart_layer);
